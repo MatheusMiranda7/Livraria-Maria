@@ -1,0 +1,62 @@
+' login
+@startuml
+actor Cliente
+participant Sistema
+
+Cliente -> Sistema : inserir login e senha
+Sistema -> Sistema : validar credenciais
+Sistema --> Cliente : mostrar mensagem de sucesso/falha
+@enduml
+
+' pedido
+@startuml
+actor Cliente
+participant Sistema
+participant Produto
+participant Pagamento
+participant Entrega
+
+Cliente -> Sistema : selecionar produtos
+Sistema -> Produto : verificar estoque
+Sistema --> Cliente : adicionar ao carrinho
+Cliente -> Sistema : finalizar pedido
+Sistema -> Pagamento : processar pagamento
+Pagamento --> Sistema : confirmação
+Sistema -> Entrega : gerar entrega
+Entrega --> Cliente : informar status
+@enduml
+
+' pagamento
+@startuml
+actor Cliente
+participant Sistema
+participant Pagamento
+
+Cliente -> Sistema : enviar dados de pagamento
+Sistema -> Pagamento : processar pagamento
+Pagamento --> Sistema : retorno de sucesso/falha
+Sistema --> Cliente : atualizar status do pedido
+@enduml
+
+' avaliação
+@startuml
+actor Cliente
+participant Sistema
+participant Produto
+
+Cliente -> Sistema : selecionar produto
+Sistema -> Produto : registrar avaliação
+Produto --> Sistema : confirmação
+Sistema --> Cliente : avaliação publicada
+@enduml
+
+' entrega
+@startuml
+actor Transportadora
+participant Sistema
+participant Pedido
+
+Transportadora -> Sistema : atualizar status de entrega
+Sistema -> Pedido : registrar entrega
+Pedido --> Transportadora : confirmação
+@enduml

@@ -1,0 +1,156 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* HEADER */
+.header {
+    background: #4A148C;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.menu a {
+    color: #fff;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    opacity: 0.7;
+}
+
+/* HOME */
+.home-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.btn-home {
+    display: inline-block;
+    margin-top: 25px;
+    background: #6A1B9A;
+    padding: 12px 25px;
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.btn-home:hover {
+    background: #4A148C;
+}
+
+/* CARRINHO */
+.carrinho-container {
+    width: 70%;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.carrinho-lista {
+    margin-top: 20px;
+}
+
+.carrinho-item {
+    display: flex;
+    justify-content: space-between;
+    background: #f5f5f5;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.btn-remover {
+    background: #D32F2F;
+    border: none;
+    color: #fff;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.btn-remover:hover {
+    background: #B71C1C;
+}
+
+.carrinho-total {
+    margin-top: 30px;
+    text-align: right;
+}
+
+.btn-finalizar {
+    background: #2E7D32;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-finalizar:hover {
+    background: #1B5E20;
+}
+
+/* Topo */
+.top-bar {
+    background: #0078ff;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-bar a {
+    background: white;
+    color: #0078ff;
+    padding: 8px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Grid do catálogo */
+.produtos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Card */
+.produto-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #0002;
+    text-align: center;
+}
+
+.produto-card button {
+    width: 100%;
+    padding: 10px;
+    background: #0078ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.produto-card button:hover {
+    background: #005fcc;
+}

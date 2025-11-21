@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Livraria Maria - Login</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="auth-body">
+    
+    <div class="auth-container">
+        <h1 class="logo">📚 Livraria Maria</h1>
+
+        <!-- LOGIN -->
+        <div id="login-form" class="card">
+            <h2>Login</h2>
+            <input type="email" id="email" placeholder="Digite seu e-mail">
+            <input type="password" id="senha" placeholder="Digite sua senha">
+            <button class="btn" onclick="login()">Entrar</button>
+            <p>Não tem conta? <a href="#" onclick="showCadastro()">Criar conta</a></p>
+        </div>
+
+        <!-- CADASTRO -->
+        <div id="cadastro-form" class="card" style="display:none;">
+            <h2>Cadastro</h2>
+            <input type="text" id="nome" placeholder="Seu nome completo">
+            <input type="email" id="email-cad" placeholder="Seu e-mail">
+            <input type="password" id="senha-cad" placeholder="Crie uma senha">
+            <button class="btn" onclick="cadastrar()">Cadastrar</button>
+            <p>Já tem conta? <a href="#" onclick="showLogin()">Fazer login</a></p>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+</body>
+</html>
+

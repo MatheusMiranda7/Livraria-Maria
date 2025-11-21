@@ -1,0 +1,54 @@
+@startuml
+' Configuração do layout
+left to right direction
+skinparam usecase {
+  BackgroundColor LightBlue
+  BorderColor Black
+  ArrowColor DarkBlue
+}
+
+' Ator(es)
+actor Cliente
+actor Administrador
+actor "Sistema de Pagamento" as Pagamento
+actor Transportadora
+
+' Casos de Uso do Cliente
+usecase "Registrar / Login" as UC_Login
+usecase "Navegar Produtos" as UC_Navegar
+usecase "Adicionar ao Carrinho" as UC_Adicionar
+usecase "Finalizar Pedido" as UC_Finalizar
+usecase "Avaliar Produto" as UC_Avaliar
+usecase "Consultar Histórico" as UC_Historico
+
+' Casos de Uso do Administrador
+usecase "Gerenciar Produtos" as UC_GerenciarProd
+usecase "Gerenciar Categorias" as UC_GerenciarCat
+
+' Casos de Uso de Serviços Externos
+usecase "Processar Pagamento" as UC_Pagamento
+usecase "Realizar Entrega" as UC_Entrega
+
+' Relações Cliente
+Cliente --> UC_Login
+Cliente --> UC_Navegar
+Cliente --> UC_Adicionar
+Cliente --> UC_Finalizar
+Cliente --> UC_Avaliar
+Cliente --> UC_Historico
+
+' Relações Administrador
+Administrador --> UC_GerenciarProd
+Administrador --> UC_GerenciarCat
+
+' Relações Sistema de Pagamento
+Pagamento --> UC_Pagamento
+
+' Relações Transportadora
+Transportadora --> UC_Entrega
+
+' Extensões (opcional, se quiser mostrar fluxo extra)
+UC_Finalizar ..> UC_Pagamento : inclui
+UC_Finalizar ..> UC_Entrega : inclui
+
+@enduml

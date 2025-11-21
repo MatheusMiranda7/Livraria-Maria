@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Carrinho - Livraria Maria</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header class="header">
+    <h1 class="logo">Carrinho 🛒</h1>
+    <nav class="menu">
+        <a href="home.html">Home</a>
+        <a href="catalogo.html">Catálogo</a>
+        <a href="index.html">Sair</a>
+    </nav>
+</header>
+
+<section class="carrinho-container">
+    <h2>Itens no Carrinho</h2>
+
+    <div id="listaCarrinho" class="carrinho-lista"></div>
+
+    <div class="carrinho-total">
+        <h3>Total: R$ <span id="totalCompra">0,00</span></h3>
+        <button id="btnFinalizar" class="btn-finalizar">Finalizar Compra</button>
+    </div>
+</section>
+
+<script src="js/carrinho.js"></script>
+
+</body>
+</html>

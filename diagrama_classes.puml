@@ -1,0 +1,82 @@
+@startuml
+class Cliente {
+  +id: int
+  +nome: string
+  +email: string
+  +senha: string
+  +endereco: string
+  +realizarPedido()
+  +avaliarProduto()
+}
+
+class Produto {
+  +id: int
+  +nome: string
+  +descricao: string
+  +preco: float
+  +estoque: int
+  +atualizarEstoque()
+}
+
+class Categoria {
+  +id: int
+  +nome: string
+  +adicionarProduto()
+  +removerProduto()
+}
+
+class Pedido {
+  +id: int
+  +data: date
+  +status: string
+  +total: float
+  +calcularTotal()
+  +atualizarStatus()
+}
+
+class ItemPedido {
+  +quantidade: int
+  +subtotal: float
+  +calcularSubtotal()
+}
+
+class Pagamento {
+  +id: int
+  +tipo: string
+  +status: string
+  +data: date
+  +processarPagamento()
+  +atualizarStatus()
+}
+
+class Entrega {
+  +id: int
+  +status: string
+  +dataPrevista: date
+  +transportadora: string
+  +atualizarStatusEntrega()
+}
+
+class Avaliacao {
+  +nota: int
+  +comentario: string
+  +publicarAvaliacao()
+}
+
+class Administrador {
+  +id: int
+  +nome: string
+  +email: string
+  +gerenciarProdutos()
+  +gerenciarCategorias()
+}
+
+Cliente "1" --> "*" Pedido
+Pedido "1" *-- "*" ItemPedido
+ItemPedido --> Produto
+Pedido --> Pagamento
+Pedido --> Entrega
+Produto "1" --> "*" Avaliacao
+Administrador --> Produto
+Administrador --> Categoria
+@enduml
